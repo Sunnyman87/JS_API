@@ -65,28 +65,30 @@ const myImg = document.createElement('img');
 myPlace.appendChild(myImg);
 myImg.className = "img-thumbnail";
 
-// const getCatImg = () => {
+// const getCoffeeImg = () => {
 //     fetch('https://dog.ceo/api/breeds/image/random')
 //         .then(Response => Response.json())
 
 //         .then(data => {
-//             // console.log(data)
+//             console.log(data)
 //             myImg.src = data.message;
 //         });
 // }
-const getDogImg = async () => {
+const getCoffeeImg = async () => {
     try {
-        const res = await fetch('https://dog.ceo/api/breeds/image/random');
+        const res = await fetch('https://coffee.alexflipnote.dev/random.json')
         console.log(res);
         const data = await res.json();
         console.log(data);
-        myImg.src = data.message;
+
+        myImg.src = data.file;
+        console.log(getCoffeeImg)
     } catch (error) {
         console.log(error)
     }
 }
 
-myBtn.addEventListener('click', getDogImg)
+myBtn.addEventListener('click', getCoffeeImg)
 
 // const myButton = document.querySelector('button');
 // const myPalace = document.getElementById('myPalace');
